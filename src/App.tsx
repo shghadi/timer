@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -9,15 +8,13 @@ function App() {
       setCount((prev) => prev + 1);
     }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="p-4 border rounded w-40 text-center">
-      <h2 className="text-lg font-bold mb-2">Timer</h2>
-      <p className="text-xl">{count}</p>
+    <div className="p-6 w-48 rounded-2xl shadow-md bg-white">
+      <h2 className="text-lg font-bold mb-3 text-gray-700">⏱ Timer</h2>
+      <p className="text-3xl font-mono text-blue-600">{count}</p>
     </div>
   );
 }
